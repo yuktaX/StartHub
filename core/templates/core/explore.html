@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Startups</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+</head>
+<style>
+  header{
+    font-family: sans-serif;
+    background-color: rgb(141, 176, 198);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+  section{
+            padding: 60px 0;
+        }
+        .carousel-item{
+            height:32rem;
+            background: rgb(141, 176, 198);
+            color: white;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+        }
+        .overlay-image{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 50px;
+        }
+   
+  a{
+    text-decoration: inherit;
+    color: inherit;
+    Text-Decoration: None
+  }
+  a:hover{   
+  text-decoration: none;
+  color: inherit;
+}
+
+</style>
+<body>
+   <!-- navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/explore/">
+        <img src="/static/img/StartHub3.png" alt="..." height="36">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout/"><img width="80px" src="/static/img/Logout.png"></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+</nav>
+        
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+              <ol class="carousel-indicators">
+                  <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                  <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                  <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="/explore/?q=EdTech#ex"><div class="overlay-image" style="background-image: url(/static/img/Online\ lesson\ _Monochromatic.svg);"></div>
+                    <div class="container" style="position: absolute; bottom: 0; left: 0; right: 0;
+                    padding-bottom: 50px;">
+                        <h1 style="margin-left: 100px;">Invest in the booming Ed-Tech</h1>
+                        <p style="margin-left: 100px; margin-bottom: 150px;">Invest in Ed-Tech startups  </p>
+                    </div>
+                </a>
+                </div>
+                  <div class="carousel-item ">
+                    <a href="/explore/?q=HealthCare#ex"><div class="overlay-image" style="background-image: url(/static/img/health.svg);"></div>
+                      <div class="container" style="position: absolute; bottom: 0; left: 0; right: 0;
+                      padding-bottom: 50px;">
+                          <h1 style="margin-left: 100px;">Invest In A Healthier World!</h1>
+                          <p style="margin-left: 100px; margin-bottom: 150px;">Invest in the healthcare sector.</p>
+                      </div>
+                    </a>
+                  </div>
+                
+                  
+                  <div class="carousel-item">
+                    <a href="/explore/?q=FinTech#ex"><div class="overlay-image" style="background-image: url(/static/img/money.svg);"></div>
+                      <div class="container" style="position: absolute; bottom: 0; left: 0; right: 0;
+                      padding-bottom: 50px;">
+                          
+                          <h1 style="margin-left: 100px;">The Future Of Money Is Here!</h1>
+                          <p style="margin-left: 100px; margin-bottom: 150px;">Invest in the FinTech startups</p>
+                      </div>
+                    </a>
+                  </div>
+               
+                  
+              </div>
+              <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </a>
+              <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </a>
+          </div>
+    
+  <br>
+ 
+        
+  <form method="POST" action="/explore/">
+    {% csrf_token %}
+    
+    <label for="filterr"></label>
+   
+    <select name="filterr" id="filterr">
+    <option value="valuation">....</option>
+    <option value="valuation">Valuation</option>
+    <option value="equity">Equity</option>
+    <option value="investment">Investment</option>
+    <option value="revenue">Revenue</option>
+    <option value="profit">Profit</option>
+    </select>
+    
+    <input type = "submit" value="Sort">
+</form><br>
+        
+          {% for tag in tags %}
+          <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            <a href="/explore/?q={{tag.name}}#ex">{{tag.name}}</a>
+        </button>
+          {%endfor%}
+          <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            <a href="{% url 'explore' %}#ex">Clear Filters</a>
+        </button>
+        </div>
+<br>
+<br> <div id="ex"></div>
+      <section style="background-color: #f0f0f0">
+        <div class="container-lg">
+          <br>
+          <div class="text-center">
+            <h3 class="display-6">{{q}} Startups</h3>
+          </div>
+          <div class="row my-5 align-items-center justify-content-center">
+            {% for startup in startups %}
+            
+            <div class="col-8 col-lg-4 col-xl-3 mb-5">
+                <a href="/info/{{startup.id}}">
+              <div class="card d-flex flex-column" style="width: 20rem; height: 30rem; ">
+                <img src="{{ startup.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body text-center py-4 d-flex flex-column align-items-center justify-content-center">
+                  <h3>{{startup.name}}</h3>
+                  <p>{{startup.bio}}</p><hr>
+                  <p>Investment Needed = ₹ {{startup.investment}} crores</p>
+                  <p>Equity Offered = {{startup.equity}} %</p>
+                  <p>Valuation = ₹ {{startup.valuation}} crores</p>
+                </div>
+              </div>
+            </a>
+            </div>
+    
+            <br>
+            {% endfor %}
+            
+            
+            
+            
+          </div>
+
+      </section>
+    
+
+    
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+</body>
+</html>

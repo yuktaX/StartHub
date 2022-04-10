@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>company form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <style>
+
+     </style>
+</head>
+<body style="background-color: rgb(201, 243, 253);">
+    <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="/profile/">
+        <img src="/static/img/StartHub3.png" alt="..." height="36">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout/"><img width="80px" src="/static/img/Logout.png"></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+</nav>
+<br>
+    <section>
+        <div class="container-lg" style="border: black;">
+            <div class="text-center" style="border: black;">
+                <h3 class="display-6">List your Startup</h3>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-lg-3">
+                    <form name="StartupForm1" enctype="multipart/form-data" method="POST" action="/listt/">
+                    {% csrf_token %}
+                        <label for="text" class="form-label">Company name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Name">
+                    
+                </div>
+                <div class="col-lg-3">
+                    
+                        <label for="text" class="form-label">Company website</label>
+                        <input type="text" class="form-control" name="site" placeholder="Website Link">
+                    
+                </div>
+                <div class="col-lg-6">
+                        <label for="Email" class="form-label">Company email</label>
+                        <input type="text" class="form-control" name="email" placeholder="name@example.com">
+                    
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mt-3">
+                    <div class="input-group">
+                        <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Problem</span>
+                        <textarea class="form-control" name="problem" aria-label="With textarea" required placeholder="Explain the problem that your company solves"></textarea>
+                      </div>
+                </div>
+                <div class="col-lg-6 mt-3">
+                    <div class="input-group">
+                        <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Company Bio</span>
+                        <textarea class="form-control" name="bio" aria-label="With textarea" required placeholder="Describe your startup in one line"></textarea>
+                      </div>
+                </div>
+                <div class="col-lg-6 mt-3">
+                    <div class="input-group">
+                        <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Solution</span>
+                        <textarea class="form-control" name="solution" aria-label="With textarea" required placeholder="Explain how your company solves the problem"></textarea>
+                      </div>
+                </div>
+                <div class="col-lg-6 mt-3">
+                    <div class="input-group">
+                        <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Edge over competitors</span>
+                        <textarea class="form-control" name="edge" aria-label="With textarea" required placeholder="Explain how your company will stay ahead in the competition"></textarea>
+                      </div>
+                </div>
+                <div class="col-lg-6 mt-3">
+                    <div class="input-group input-group-md">
+                        <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Cover photo</span>
+                    <input type="file" name="image" class="form-control" id="image" placeholder="Image" required>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-3">
+                     
+                   
+                </div>
+            </div>
+            <br>
+            <h4 class="text-center">Financial details</h4>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 mt-3">
+                    <div class="input-group">
+                        <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Revenue Model</span>
+                        <textarea class="form-control" name="RModel" aria-label="With textarea" required placeholder="Explain your startup's revenue model"></textarea>
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-3">
+                  <div class="input-group">
+                    <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Use of funds</span>
+                    <textarea class="form-control" name="use_of_funds" aria-label="With textarea" required placeholder="What is your plan for the future of your startup with the invested money?"></textarea>
+                  </div>
+                </div>
+                <h5 class="text-center mt-3">Investment Pitch</h5>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text">%</span>
+                        <input type="text" name="equity" class="form-control" placeholder="Equity Offered" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="investment" class="form-control" placeholder="Investment fund required in crores" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="valuation" class="form-control" placeholder="Valuation of this investment in crores" required>
+                    </div>
+                </div>
+                <h5 class="text-center mt-3">Current Financial Data</h5>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="pfy" class="form-control" placeholder="Previous Financial Year (PFY) eg: 2020-21" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="revenue_pfy" class="form-control" placeholder="Revenue in previous financial year in crores" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="revenue_total" class="form-control" placeholder="Total Revenue generated till date in crores" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="profit_pfy" class="form-control" placeholder="EBITDA of previous financial year in crores" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="profit_total" class="form-control" placeholder="Total EBITDA till date in crores" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <input type="text" name="short_term_debt" class="form-control" placeholder="Short-term debt(if any) in crores">
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text">%</span>
+                        <input type="text" name="net_margin" class="form-control" placeholder="Net-margin" required>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text">%</span>
+                        <input type="text" name="gross_margin" class="form-control" placeholder="Gross margin" required>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+               
+        </div>
+        <br>
+        <div class="container-lg">  
+        <h5 class="text-center">Team details</h5>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="input-group input-group-md">
+                    <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Team picture</span>
+                <input type="file" name="teamimage" class="form-control" placeholder="Image" required>
+                </div>
+           </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <span class="input-group-text" style="background-color: #476978; color: rgb(255, 255, 255);">Team bio</span>
+                <textarea class="form-control" name="team" aria-label="With textarea" placeholder="Add the bios of all key people behind this startup. You may also add the links to their LinkedIn profiles." required></textarea>
+              </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <br>
+    <hr>
+        <div class="text-center">
+        <button class="btn btn-bg" type="submit" style="background-color: #476978; color: rgb(255, 255, 255);">Submit</button>
+        </div>
+    </form>
+        <br>
+        <br>
+    
+</body>
+</html>

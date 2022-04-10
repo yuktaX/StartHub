@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Lato&family=Oswald&family=Overpass&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif
+}
+
+body {
+    background-color: #b0e7fa;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px
+}
+.til{
+    
+    font-family: 'Lato', sans-serif;
+    color: #29556b;
+    font-size: 65px;
+    text-align: center;
+
+}
+.conti{
+    font-size: 19px;
+
+}
+.tagl{
+    
+    font-size: 20px;
+    text-align: center;
+    color: rgb(15, 54, 72);
+}
+.pic {
+    width: 800px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+    
+    
+}
+.pict {
+    width: 800px;
+    height: 400px;
+    
+    
+}
+
+.card1 {
+    background-color: #ecf2f4;
+    padding: 20px;
+    max-width: 980px;
+    margin: 10px 8px;
+    border-radius: 15px
+}
+
+.card2 {
+    padding: 20px;
+    background-color: #ecf2f4;
+    max-width: 500px;
+    margin: 2px 1px;
+    border-radius: 15px
+}
+
+.h-green {
+    color: #2d5c74;
+    font-size: 40px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600
+}
+.h-greens {
+    color: #2d5c74;
+    font-size: 30px;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600
+}
+.h-greent {
+
+    color: #2d5c74;
+    font-size: 65px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    text-align: center
+}
+
+.farm {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover
+}
+
+.carousel-indicators {
+    bottom: -10px;
+    left: initial;
+    right: 0;
+    margin: 0
+}
+
+.carousel-indicators [data-bs-target] {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #ebb5bc
+}
+
+.items {
+    font-size: 15px;
+    background-color: #29556b;
+    margin: 7px 3px;
+    padding: 4px;
+    color: #ecf2f4;
+    
+}
+
+.fa-search-plus {
+    color: #ec6070
+}
+
+.carousel-indicators .active {
+    background-color: #000
+}
+
+@media only screen and (max-width:767.5px) {
+    .container {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .card1 {
+        max-width: 400px
+    }
+
+    .card2 {
+        max-width: 400px
+    }
+
+    .farm {
+        width: 150px;
+        height: 80px
+    }
+}
+
+@media only screen and (max-width:400px) {
+    .container {
+        flex-direction: column;
+        align-items: center
+    }
+
+    .card1 {
+        max-width: 400px
+        
+    }
+
+    .farm {
+        width: 100px;
+        height: 80px
+    }
+}
+
+.char_icon {
+    margin-top: 15px
+}
+.cringe{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px
+}
+
+.char_item {
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    border: solid 1px #e8e8e8;
+    padding-left: 36px;
+    background-color: #b0e7fa;
+    border-radius: 15px
+}
+
+.char_content {
+    margin-top: 22px
+}
+
+.char_title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #666666
+}
+
+.char_subtitle {
+    font-size:20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 3px
+}
+.emil {
+    font-size:12px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 3px
+}
